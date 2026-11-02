@@ -2,100 +2,134 @@
 <div>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,100:6366f1&height=100&section=header" width="100%"/>
 
-# How to Use Messenger?
+# Messenger
 
-## 1. Download and Run
+A simple desktop messaging application built with Python and Tkinter.
 
-1. Download `Messenger.exe`.
-2. Double-click the downloaded file to launch Messenger.
-3. If you already have a saved session, Messenger will attempt to log you in automatically.
+Messenger allows users to communicate through public and private messages using a graphical interface. It connects to a remote server using TCP sockets and exchanges messages in JSON format.
 
-No Python installation is required.
+## Features
 
-## 2. Create an Account
+- **Graphical User Interface:** Built with Python Tkinter.
+- **User Authentication:** Sign in and create an account.
+- **Automatic Login:** Restore your session using a saved authentication token.
+- **Public Chat:** Send messages to everyone.
+- **Private Chat:** Send messages to a specific user.
+- **Real-time Communication:** Receive messages without refreshing.
+- **Dark Interface:** A clean, dark-themed desktop design.
+- **Cross-platform GUI:** Uses Python's built-in Tkinter library.
 
-Enter the following command in the client:
+## Getting Started
+
+### Download
+
+Download the latest Messenger executable from the [Releases](../../releases) section.
+
+### Run
+
+1. Download the latest release.
+2. Extract the downloaded file if necessary.
+3. Run `Messenger.exe`.
+4. Sign in or create a new account.
+5. Start messaging!
+
+No separate Python installation is required when using the packaged executable.
+
+## How to Use
+
+### 1. Create an Account
+
+- Open Messenger.
+- Enter your username.
+- Enter your password.
+- Confirm your password.
+- Click **CREATE ACCOUNT**.
+
+### 2. Sign In
+
+Enter your username and password, then click **SIGN IN**.
+
+### 3. Public Messages
+
+Simply type your message in the message box and press Enter or click SEND.
+
+Example:
 
 ```text
-new username password password
+Hello everyone!
+```
+
+Public messages are sent to everyone.
+
+### 4. Private Messages
+
+To send a private message, use the following format:
+
+```text
+PRVC username message
 ```
 
 Example:
 
 ```text
-new Aria 1234 1234
+PRVC Alex Hello! How are you?
 ```
 
-Choose a username and password. Enter the password twice to confirm it.
+Replace `username` with the recipient's username.
 
-You will be logged in automatically after successful registration.
+### 5. Log Out
 
-## 3. Log In
+Click the **LOG OUT** button in the sidebar to end your session.
 
-To log in to an existing account, enter:
+## Technology Stack
 
-```text
-login username password
+| Technology  | Purpose                      |
+| ----------- | ---------------------------- |
+| Python      | Main programming language    |
+| Tkinter     | Graphical user interface     |
+| Socket      | Network communication        |
+| Threading   | Background message receiving |
+| JSON        | Data exchange                |
+| PyInstaller | Executable packaging         |
+
+## Network Protocol
+
+Messenger communicates with its server using TCP sockets.
+
+Messages are exchanged as JSON objects, with each message terminated by a newline character.
+
+The client supports authentication, session restoration, public messaging, private messaging, and logout operations.
+
+## Development
+
+To run the application from source:
+
+1. Install Python 3.
+2. Make sure Tkinter is available.
+3. Clone this repository.
+4. Run:
+
+```bash
+python Messenger.py
 ```
 
-Example:
+To build a Windows executable:
 
-```text
-login Aria 1234
+```bash
+pip install pyinstaller
+pyinstaller --onefile --clean --windowed --name Messenger Messenger.py
 ```
 
-Your session is saved on your computer, so you can automatically log in the next time you launch Messenger.
+The executable will be generated inside the `dist` directory.
 
-## 4. Send a Public Message
+## Notes
 
-Start your message with a dot (`.`) to send it to everyone currently online.
+- An active server connection is required.
+- User accounts and authentication are managed by the remote server.
+- The client stores session information locally.
+- Message history is not permanently stored by the client.
 
-Example:
-
-```text
-. Hello everyone!
-```
-
-## 5. Send a Private Message
-
-Type the recipient's username followed by your message.
-
-Example:
-
-```text
-Ali Hi, how are you?
-```
-
-Only the specified online user will receive your message.
-
-## 6. Log Out
-
-Enter:
-
-```text
-exit
-```
-
-You will return to the login menu and can sign in to another account.
-
-## 7. Close Messenger
-
-At the login menu, enter:
-
-```text
-quit
-```
-
-You can also close the application window.
-
-## 8. Important Notes
-
-- An internet or network connection to the Messenger server is required.
-- Public messages sent before you come online are not delivered to you.
-- Private messages can only be received while the recipient is online.
-- Keep your account credentials and session files private.
-
-## 9. Licence: MIT
+## License: MIT
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,100:6366f1&height=100&section=footer" width="100%"/>
 
