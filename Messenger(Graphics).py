@@ -31,7 +31,7 @@ status_label = None
 root = tk.Tk()
 root.title("Messenger")
 root.geometry("1000x700")
-root.minsize(650, 450)
+root.state("zoomed")
 root.configure(bg="#10131c")
 
 # Colors
